@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+:root {
+    /* TEXT */
+    /* sub-heading at the top of the app UI */
+    --pale-violet: hsl(276, 100%, 81%);
+    /* chat on the left */
+    --moderate-violet: hsl(276, 55%, 52%);
+    /* chat on the right */
+    --desaturated-dark-violet: hsl(271, 15%, 43%);
+    /* placeholder text */
+    --grayish-blue: hsl(206, 6%, 79%);
+    /* main heading */
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    /* paragraph */
+    --dark-grayish-violet: hsl(270, 7%, 64%);
+
+    /* GRADIENTS */
+    --light-magenta: hsl(293, 100%, 63%);
+    --light-violet: hsl(264, 100%, 61%);
+
+    /* SECONDARY */
+    --white: hsl(0, 0%, 100%);
+    /* app background */
+    --light-grayish-violet: hsl(270, 20%, 96%);
+    /* submit button background */
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    /* radio button outline */
+    --very-light-magenta: hsl(289, 100%, 72%);
+}
+
+/* global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* base styles */
+body {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    min-height: 100vh;
+}
