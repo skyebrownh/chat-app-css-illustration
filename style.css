@@ -6,6 +6,8 @@
     --pale-violet: hsl(276, 100%, 81%);
     /* chat on the left */
     --moderate-violet: hsl(276, 55%, 52%);
+    /* chat on the left background */
+    --moderate-violet-bg: hsla(276, 55%, 52%, 0.1);
     /* chat on the right */
     --desaturated-dark-violet: hsl(271, 15%, 43%);
     /* placeholder text */
@@ -21,6 +23,7 @@
 
     /* SECONDARY */
     --white: hsl(0, 0%, 100%);
+    --white-alt: hsla(0, 0%, 100%, 0.8);
     /* app background */
     --light-grayish-violet: hsl(270, 20%, 96%);
     /* submit button background */
@@ -41,4 +44,299 @@ body {
     font-size: 16px;
     font-family: 'Rubik', sans-serif;
     min-height: 100vh;
+}
+
+h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 0.65rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    z-index: 2;
+    position: relative;
+}
+
+img,
+span,
+.phone .message-header .message-header-content,
+.slight-angle-arrow-left,
+.three-vertical-dots,
+.send-message-button,
+.angle-arrow-right {
+    display: inline-block;
+}
+
+.slight-angle-arrow-left .arrow-top {
+    width: 3px;
+    height: 8px;
+    background: var(--white);
+    transform: rotateZ(30deg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.slight-angle-arrow-left .arrow-bottom {
+    width: 3px;
+    height: 8px;
+    background: var(--white);
+    transform: rotateZ(-30deg);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -2px;
+}
+
+.three-vertical-dots .dot {
+    width: 3px;
+    height: 3px;
+    background: var(--pale-violet);
+    border-radius: 50%;
+    margin: 1px 0;
+}
+
+.angle-arrow-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.angle-arrow-right .arrow-top {
+    width: 3px;
+    height: 8px;
+    background: var(--white);
+    transform: rotateZ(-45deg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.angle-arrow-right .arrow-bottom {
+    width: 3px;
+    height: 8px;
+    background: var(--white);
+    transform: rotateZ(45deg);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -3px;
+}
+
+/* main styles */
+main {
+    width: 100%;
+    height: 100%;
+    background: var(--light-grayish-violet);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(var(--light-magenta), 1%, var(--light-violet));
+    border-bottom-right-radius: 200px;
+    z-index: 1;
+}
+
+/* phone */
+.phone {
+    background: var(--white);
+    max-width: 75%;
+    padding: 0.5rem;
+    border-radius: 25px;
+    margin-bottom: 3rem;
+}
+
+.phone::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    height: 25px;
+    border-radius: 20px;
+    width: 50%;
+    /* phone notch should be above message header */
+    z-index: 4;
+}
+
+.phone .message-header {
+    background: linear-gradient(to right, var(--light-violet), var(--light-magenta));
+    padding: 1.75rem 0.75rem 1rem;
+    color: var(--white);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* message body should be slightly underneath message header */
+    z-index: 3;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.1);
+    margin-bottom: 0.25rem;
+}
+
+.phone .slight-angle-arrow-left {
+    margin-right: 0.75rem;
+}
+
+.phone .message-header img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    margin-right: 0.75rem;
+}
+
+.phone .message-header-content h2 {
+    margin-bottom: 3px;
+}
+
+.phone .message-header-content p {
+    color: var(--pale-violet);
+}
+
+.phone .three-vertical-dots {
+    margin-left: auto;
+}
+
+/* message body */
+.message-body {
+    padding: 1rem 0.75rem 0.75rem;
+    margin-top: -0.5rem;
+    background: var(--light-grayish-violet);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.message-body .single-message {
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    max-width: 75%;
+    margin: 0 0 0.75rem;
+}
+
+.message-body .single-message p {
+    line-height: 1.4;
+}
+
+.message-body .recipient {
+    background: var(--moderate-violet-bg);
+    color: var(--moderate-violet);
+    border-bottom-left-radius: 5px;
+}
+
+.message-body .sender {
+    background: var(--white);
+    color: var(--desaturated-dark-violet);
+    border-bottom-right-radius: 5px;
+    align-self: flex-end;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.1);
+}
+
+.message-body .img-group {
+    background: transparent;
+    max-width: 85%;
+    padding: 0;
+    box-shadow: none;
+}
+
+.message-body .img-group img {
+    width: 55px;
+    border-radius: 15px;
+    margin-left: 5px;
+}
+
+.message-body .money-selection {
+    padding: 0.75rem;
+    background: linear-gradient(to right, var(--light-magenta), var(--light-violet));
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    box-shadow: 0px 5px 10px -3px rgba(0,0,0,0.1);
+}
+
+.message-body .money-selection .radio {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--very-light-magenta);
+    margin-right: 0.5rem;
+}
+
+.message-body .money-selection .length {
+    color: var(--white-alt);
+    font-size: 0.65rem;
+}
+
+.message-body .money-selection .amount {
+    font-weight: 700;
+    color: var(--white);
+    margin-left: auto;
+    font-size: 0.9rem;
+}
+
+.message-body .message-input {
+    background: var(--white);
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+}
+
+.message-body .message-input p {
+    color: var(--grayish-blue);
+    display: inline-block;
+}
+
+.message-body .message-input .angle-arrow-right {
+    background: var(--very-dark-desaturated-violet);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.message-body .message-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* main content */
+.main-content {
+    max-width: 75%;
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--very-dark-desaturated-violet);
+    margin-bottom: 1.5rem;
+}
+
+.main-content p {
+    font-size: 0.95rem;
+    color: var(--dark-grayish-violet);
+    line-height: 1.7;
 }
